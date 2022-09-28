@@ -1,0 +1,13 @@
+const express = require('express'); 
+const { route } = require('express/lib/application');
+const router = express.Router(); 
+const useractivityController = require('../controllers/UserActivity'); 
+router.post('/CreateUserActivity', useractivityController.CreateUserActivity);
+router.post('/CreateUserActivityDone', useractivityController.CreateUserActivityDone);
+router.patch("/UpdateUserActivity", useractivityController.UpdateUserActivity);
+router.patch("/UpdateUserActivityDone", useractivityController.UpdateUserActivityDone);
+router.patch("/UpdateActivityStatus", useractivityController.UpdateActivityStatus);
+router.post('/getUserActivity', useractivityController.getUserActivity);
+router.post('/getWeeklyActivity', useractivityController.getWeeklyActivity);
+router.post('/getBindUserActivity', useractivityController.getBindUserActivity);
+module.exports = router;

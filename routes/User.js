@@ -1,0 +1,10 @@
+const express = require('express'); 
+const { route } = require('express/lib/application');
+const router  = express.Router(); 
+const userController = require('../controllers/User'); 
+router.post('/CreateUser', userController.CreateUser); 
+router.post('/LoginUser', userController.LoginUser); 
+router.delete("/DeleteUser/:id", userController.DeleteUser);
+router.post('/getTotalGoal', userController.getTotalGoal);
+router.post('/getCurrentGoal', userController.getCurrentGoal);
+module.exports = router;
